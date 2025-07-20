@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "b9a14001-f2a8-42e1-8b8e-1711764ae487",
+		"name": "Bishop Prototype API",
+		"description": "Коллекция для тестирования REST API эмулятора (bishop-prototype)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31032891"
+	},
+	"item": [
+		{
+			"name": "Отправить команду (COMMON)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"description\": \"Несрочно дать сваги\",\n  \"priority\": \"COMMON\",\n  \"author\": \"Лейтенант Эллен Рипли\",\n  \"time\": \"2025-07-20T13:00:00\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/commands",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"commands"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Отправить команду (CRITICAL)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"description\": \"Срочно дать сваги\",\n  \"priority\": \"CRITICAL\",\n  \"author\": \"Капитан Даллас\",\n  \"time\": \"2025-07-20T13:05:00\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/commands",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"commands"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Размер очереди",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/commands/queue/size",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"commands",
+						"queue",
+						"size"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Статистика по авторам",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/commands/stats/authors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"commands",
+						"stats",
+						"authors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Статус системы",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/commands/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"commands",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Текущие метрики",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/metrics/current",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"metrics",
+						"current"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Здоровье сервиса",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/metrics/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"metrics",
+						"health"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
