@@ -20,10 +20,6 @@ repositories {
 dependencies {
 	implementation(project(":synthetic-human-core-starter"))
 	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("org.springframework.boot:spring-boot-starter-actuator")
-	implementation("io.micrometer:micrometer-registry-prometheus")
-	implementation("org.springframework.boot:spring-boot-starter-validation")
-	implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }

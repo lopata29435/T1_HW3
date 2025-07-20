@@ -20,16 +20,17 @@ import java.util.Map;
 public class CommandService {
     private static final Logger logger = LoggerFactory.getLogger(CommandService.class);
 
+    @Autowired
+    @Lazy
+    private MetricsService metricsService;
+
     private final int maxQueueSize;
     private final BlockingQueue<Command> commandQueue;
     private final Map<String, AtomicInteger> authorStats = new ConcurrentHashMap<>();
     private final AtomicInteger completedCommands = new AtomicInteger(0);
     private final AtomicInteger failedCommands = new AtomicInteger(0);
-    private final MetricsService metricsService;
 
-    @Autowired
-    public CommandService(@Lazy MetricsService metricsService, @Value("${weyland.command.queue.max-size:1000}") int maxQueueSize) {
-        this.metricsService = metricsService;
+    public CommandService(@Value("${weyland.command.queue.max-size:1000}") int maxQueueSize) {
         this.maxQueueSize = maxQueueSize;
         this.commandQueue = new LinkedBlockingQueue<>(maxQueueSize);
     }

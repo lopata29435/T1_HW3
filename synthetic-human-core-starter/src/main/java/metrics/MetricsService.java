@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
+import org.springframework.context.annotation.Lazy;
 
 @Service
 public class MetricsService {
@@ -26,7 +27,7 @@ public class MetricsService {
     private final Map<String, Counter> authorCounters = new ConcurrentHashMap<>();
     
     @Autowired
-    public MetricsService(CommandService commandService, AuditService auditService, MeterRegistry meterRegistry) {
+    public MetricsService(@Lazy CommandService commandService, AuditService auditService, MeterRegistry meterRegistry) {
         this.commandService = commandService;
         this.auditService = auditService;
         this.meterRegistry = meterRegistry;

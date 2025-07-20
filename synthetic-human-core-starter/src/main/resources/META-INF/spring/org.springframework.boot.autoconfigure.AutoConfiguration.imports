@@ -1,0 +1,4 @@
+config.WeylandAuditAutoConfiguration
+config.WeylandMetricsAutoConfiguration
+config.WeylandCommandAutoConfiguration
+config.WeylandExceptionAutoConfiguration 
